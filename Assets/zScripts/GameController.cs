@@ -30,6 +30,8 @@ public class GameController : MonoBehaviour
 	public Button no;
 	public Animator yesAnimator;
 	public Animator noAnimator;
+	public GameObject buzzerSound;
+	public GameObject dingdingSound;
 
 
 
@@ -63,10 +65,12 @@ public class GameController : MonoBehaviour
 			{
 				score ++;
 				yesAnimator.SetTrigger("correct");
+				dingdingSound.GetComponent<AudioSource>().Play ();
 			}
 			else
 			{
 				noAnimator.SetTrigger("wrong");
+				buzzerSound.GetComponent<AudioSource>().Play ();
 			}
 			StartCoroutine(TrueDelay());
 			/*
@@ -87,7 +91,7 @@ public class GameController : MonoBehaviour
 			questions.RemoveAt (currentQuestion);
 			yes.interactable = false;
 			no.interactable = false;
-			yield return new WaitForSeconds(1);
+			yield return new WaitForSeconds(1.5f);
 			yes.interactable = true;
 			no.interactable = true;
 
@@ -113,10 +117,13 @@ public class GameController : MonoBehaviour
 			{
 				score ++;
 				yesAnimator.SetTrigger("correct");
+				dingdingSound.GetComponent<AudioSource>().Play ();
 			}
 			else
 			{
 				noAnimator.SetTrigger("wrong");
+				buzzerSound.GetComponent<AudioSource>().Play ();
+
 			}
 			StartCoroutine(FalseDelay());
 			/*questions.RemoveAt (currentQuestion);
@@ -136,7 +143,7 @@ public class GameController : MonoBehaviour
 			questions.RemoveAt (currentQuestion);
 			yes.interactable = false;
 			no.interactable = false;
-			yield return new WaitForSeconds(1);
+			yield return new WaitForSeconds(1.5f);
 			yes.interactable = true;
 			no.interactable = true;
 
@@ -159,5 +166,6 @@ public class GameController : MonoBehaviour
 		Debug.Log ("GAME OVER: " + score);
 		PlayerPrefs.SetInt ("totalQuestions", totalQuestions);
 		PlayerPrefs.SetInt ("score", score);
+		Application.LoadLevel("EndingScene");
 	}
 }
