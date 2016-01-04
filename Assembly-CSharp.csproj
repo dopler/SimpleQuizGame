@@ -6,7 +6,7 @@
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
 	<RootNamespace></RootNamespace>
-	<ProjectGuid>{CF092269-11A7-9314-47A4-0AF7C3DEDF21}</ProjectGuid>
+	<ProjectGuid>{13AFD787-9CCF-4E0E-B74D-F2A7CD9CEED5}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<AssemblyName>Assembly-CSharp</AssemblyName>
@@ -45,6 +45,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\zScripts\FinalScreenScript.cs" />
      <Compile Include="Assets\zScripts\GameController.cs" />
      <Compile Include="Assets\zScripts\MainMenuScript.cs" />
  <Reference Include="UnityEngine.UI">

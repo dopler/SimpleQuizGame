@@ -12,4 +12,9 @@ public class MainMenuScript : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	public void LoadGame()
+	{
+		Application.LoadLevel("BasicGameScene");
+	}
 }

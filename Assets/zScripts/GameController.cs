@@ -21,7 +21,9 @@ public class GameController : MonoBehaviour
 
 	public List<TriviaQuestion> questions = new List<TriviaQuestion>();
 	public int currentQuestion;
+	public int count;
 	public Text questionText;
+	public Text questionNumber;
 	public int score = 0;
 	public int totalQuestions;
 	public Button yes;
@@ -37,6 +39,7 @@ public class GameController : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		count = 1;
 		if(questions.Count > 0)
 		{
 			totalQuestions = questions.Count;
@@ -79,7 +82,8 @@ public class GameController : MonoBehaviour
 	IEnumerator TrueDelay()
 	{
 		if(questions.Count>0)
-		{
+		{	
+			count++;
 			questions.RemoveAt (currentQuestion);
 			yes.interactable = false;
 			no.interactable = false;
@@ -91,6 +95,11 @@ public class GameController : MonoBehaviour
 			{
 				currentQuestion = Random.Range (0, questions.Count);
 				questionText.text = questions[currentQuestion].question;
+				questionNumber.text = "Question " + count.ToString() + ".)";
+			}
+			else
+			{
+				EndGame();
 			}
 		}
 
@@ -123,6 +132,7 @@ public class GameController : MonoBehaviour
 	{
 		if(questions.Count>0)
 		{
+			count++;
 			questions.RemoveAt (currentQuestion);
 			yes.interactable = false;
 			no.interactable = false;
@@ -134,6 +144,11 @@ public class GameController : MonoBehaviour
 			{
 				currentQuestion = Random.Range (0, questions.Count);
 				questionText.text = questions[currentQuestion].question;
+				questionNumber.text = "Question " + count.ToString() + ".)";
+			}
+			else
+			{
+				EndGame();
 			}
 		}
 
@@ -141,6 +156,7 @@ public class GameController : MonoBehaviour
 
 	public void EndGame()
 	{
+		Debug.Log ("GAME OVER: " + score);
 		PlayerPrefs.SetInt ("totalQuestions", totalQuestions);
 		PlayerPrefs.SetInt ("score", score);
 	}
