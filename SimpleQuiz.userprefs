@@ -1,8 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\Resistors\Assets\zScripts\BandColorScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\zScripts\GameController.cs">
     <Files>
-      <File FileName="..\Resistors\Assets\zScripts\BandColorScript.cs" Line="55" Column="4" />
+      <File FileName="Assets\zScripts\GameController.cs" Line="182" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

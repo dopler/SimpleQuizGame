@@ -30,6 +30,9 @@ public class GameController : MonoBehaviour
 	public Button no;
 	public Animator yesAnimator;
 	public Animator noAnimator;
+	public Animator checkmark;
+	public Animator xMark;
+
 	public GameObject buzzerSound;
 	public GameObject dingdingSound;
 
@@ -66,11 +69,13 @@ public class GameController : MonoBehaviour
 				score ++;
 				yesAnimator.SetTrigger("correct");
 				dingdingSound.GetComponent<AudioSource>().Play ();
+				RandomCheckMarkAnimation();
 			}
 			else
 			{
 				noAnimator.SetTrigger("wrong");
 				buzzerSound.GetComponent<AudioSource>().Play ();
+				RandomXMarkAnimation();
 			}
 			StartCoroutine(TrueDelay());
 			/*
@@ -118,11 +123,13 @@ public class GameController : MonoBehaviour
 				score ++;
 				yesAnimator.SetTrigger("correct");
 				dingdingSound.GetComponent<AudioSource>().Play ();
+				RandomCheckMarkAnimation();
 			}
 			else
 			{
 				noAnimator.SetTrigger("wrong");
 				buzzerSound.GetComponent<AudioSource>().Play ();
+				RandomXMarkAnimation();
 
 			}
 			StartCoroutine(FalseDelay());
@@ -167,5 +174,29 @@ public class GameController : MonoBehaviour
 		PlayerPrefs.SetInt ("totalQuestions", totalQuestions);
 		PlayerPrefs.SetInt ("score", score);
 		Application.LoadLevel("EndingScene");
+	}
+
+	public void RandomCheckMarkAnimation()
+	{
+		if(Random.Range(0,2) == 0)
+		{
+			checkmark.SetTrigger("roll");
+		}
+		else
+		{
+			checkmark.SetTrigger("spin");
+		}
+	}
+
+	public void RandomXMarkAnimation()
+	{
+		if(Random.Range(0,2) == 0)
+		{
+			xMark.SetTrigger("Slide");
+		}
+		else
+		{
+			xMark.SetTrigger("Swipe");
+		}
 	}
 }
