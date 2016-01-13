@@ -1,10 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\zScripts\GameController.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\Resistors\Assets\zScripts\BandColorScript.cs">
     <Files>
-      <File FileName="Assets\zScripts\GameController.cs" Line="137" Column="4" />
-      <File FileName="Assets\zScripts\FinalScreenScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\zScripts\MainMenuScript.cs" Line="1" Column="1" />
+      <File FileName="..\Resistors\Assets\zScripts\BandColorScript.cs" Line="55" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
